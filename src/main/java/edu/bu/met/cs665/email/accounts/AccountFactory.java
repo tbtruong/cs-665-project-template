@@ -1,5 +1,10 @@
 package edu.bu.met.cs665.email.accounts;
 
+/**
+ * This interface represents an AccountFactory.
+ *
+ * @author Tung
+ */
 public interface AccountFactory {
   public String createHeader();
 

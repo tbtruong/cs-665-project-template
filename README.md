@@ -9,25 +9,44 @@
 
 A company is asking to create an template generating application based on customer type.
 
+NOTE: Each unique class is commented but did not have time for other additional class of the same type
+
 # GitHub Repository Link:
 
-https://github.com/{YOUR_USERNAME}/cs-665-assignment-{ASSIGNMENT_NUMBER}
+https://github.com/tbtruong/cs-665-project-template/tree/assignment3
 
 # Implementation Description
 
-For this assignment, the design pattern I chose was the abstract factory. The main reason was that I categorized the
-different types of accounts as "related products". Due to this, the abstract factory design pattern fits the use case
-the best.
+- If applicable, mention any design patterns you have used and explain why they were
+  chosen.
 
-For each assignment, please answer the following:
+For this assignment, the design pattern I chose was the abstract factory. The main reason was that I categorized the
+different types of accounts as "families" and the different types of email as the "related products".
+Due to this, the abstract factory design pattern fits the use case.
 
 - Explain the level of flexibility in your implementation, including how new object types can
   be easily added or removed in the future.
+
+My implementation is very flexible. Each main class has either an abstract class it extends or an interface it must
+implement. This makes adding additional classes easier. You simply have to create a new account and a factory for that
+account. As each implementation are decoupled from each other, removing is easy as well. Just by deleting the class or
+object you want to remove, there is no effect on the main implementation.
+
 - Discuss the simplicity and understandability of your implementation, ensuring that it is
   easy for others to read and maintain.
+
+The implementation is very easy to understand. There are only three main classes: an Account type, a Factory to build
+that account type, and an Email. Each account type just requires a create email method. A factory method requires each
+portion of an email to be implmented. This is also where each "unique" aspect of the account type is implemented. The
+email class simply puts these unique pieces together.
+
 - Describe how you have avoided duplicated code and why it is important.
-- If applicable, mention any design patterns you have used and explain why they were
-  chosen.
+
+I avoided duplicate code by creating parent classes and putting the duplicate code in there. The main example is the
+toString method. As each factory is unique, there are no duplicate code for that. Each account type as well might have
+different implementations for what an "email" entails. I leave this for further dynamic changes. There is only 1
+template
+for each email type. This shows that if there is duplicate code, it is to highlight each account's difference.
 
 # Maven Commands
 
